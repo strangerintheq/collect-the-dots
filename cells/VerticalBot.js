@@ -1,9 +1,10 @@
 class VerticalBot extends Cell {
     constructor(x, y, type, game) {
-        super(x, y, type, game, 'red', 1    );
-        super.addDanger(new BotDanger())
+        super(x, y, type, game);
     }
-    tick(t) {
-        super.tick(t);
+
+    initCell() {
+        super.initCell();
+        this.addDanger(new BotDanger())
     }
 }

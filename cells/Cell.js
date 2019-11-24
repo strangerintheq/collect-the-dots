@@ -7,6 +7,10 @@ class Cell {
         this.neighbors = [];
         this.neighborsX = [];
         this.game = game;
+
+    }
+
+    initCell() {
         this.danger = {};
     }
 

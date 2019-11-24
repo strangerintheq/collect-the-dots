@@ -128,6 +128,6 @@ class Player {
         this.levelMap = level.map;
         this.entering = 30;
         this.death = 0;
-        level.iterateCells(c => c.danger = [])
+        level.iterateCells(c => c.initCell())
     }
 }
