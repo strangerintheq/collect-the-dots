@@ -9,11 +9,12 @@ class SpikeDanger extends Danger {
         this.active = 2000;
     }
 
-    tick(t){
+    tickDander(cell, t){
         let dt = t-this.t;
         if (this.delay && dt > this.delay)
             this.delay = 0;
-        return !this.delay && dt > this.active
+        if (!this.delay && dt > this.active)
+            delete cell.danger[this.id]
     }
 
     checkDeath(){

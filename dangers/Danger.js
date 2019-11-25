@@ -3,7 +3,7 @@ class Danger {
         this.id = id;
     }
 
-    tick(t){}
+    tickDander(t){}
 
     renderDanger(renderer, context, x, y){}
 
