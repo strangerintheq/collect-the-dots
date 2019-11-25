@@ -5,6 +5,6 @@ class VerticalBot extends Cell {
 
     initCell() {
         super.initCell();
-        this.addDanger(new BotDanger())
+        this.addDanger(new BotDanger([0,1]))
     }
 }

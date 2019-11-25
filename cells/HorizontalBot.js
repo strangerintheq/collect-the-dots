@@ -1,7 +1,11 @@
 class HorizontalBot extends Cell {
     constructor(x, y, type, game) {
         super(x, y, type, game);
-        this.addDanger(new BotDanger())
+    }
+
+    initCell() {
+        super.initCell();
+        this.addDanger(new BotDanger([1,0]))
     }
 
 }

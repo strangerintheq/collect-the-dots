@@ -21,7 +21,7 @@ class Cell {
 
     tick(t) {
         Object.entries(this.danger).forEach(entry => {
-            entry[1].tickDander(this, t);
+            entry[1].tickDanger(this, t);
         });
     }
 

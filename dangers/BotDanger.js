@@ -1,15 +1,23 @@
 class BotDanger extends Danger {
-    constructor() {
+    constructor(direction) {
         super('bot_');
-        this.direction = [0, 1];
+        this.direction = direction;
         this.delay = 1000;
         this.t = Date.now();
     }
 
     tickDanger(cell, t){
-       if (t-this.t>this.delay){
-           delete cell.danger[this.id]:
-           cell.neighbors[0].addDanger(new BotDanger());
+       if (t-this.t > this.delay) {
+           let next = cell.neighbors.find( n => !n.isWall
+                   && n.y === cell.y + this.direction[1]
+                   && n.x === cell.x + this.direction[0]);
+           if (next) {
+               delete cell.danger[this.id];
+               next.addDanger(new BotDanger(this.direction));
+           } else {
+               this.direction[0] *= -1;
+               this.direction[1] *= -1;
+           }
        }
     }
 
